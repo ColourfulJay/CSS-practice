@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inline CSS</title>
+  </head>
+  <!--
+    in the body tag, we use the style attribute to add CSS (Cascading Style Sheets) properties 
+    and values to change the styling of the whole web page.
+
+    in this specific example, we change the backkground colour using the background-color property to the colour 
+    #f5f5ff, which makes the background colour a white with a hint of blue.
+    We also change the font colour using the colour property o colour midnightblue, which is 
+    built in to CSS.
+  -->
+  <body style="background-color: #fbfbfe; color: midnightblue">
+    <nav>
+      <ul>
+        <li><a href="index.html">Inline CSS</a></li>
+        <li><a href="interal-css.html">Internal CSS</a></li>
+        <li><a href="external-css.html">External CSS</a></li>
+        <li>
+          <a href="playing-with-external.html">Playing with External CSS</a>
+        </li>
+        <li><a href="clases-and-ids.html">Classes and Ids</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h1 style="font-size: 40px; text-align: center">Inline CSS</h1>
+      <!-- 
+        this sets the heading to be center aligned and changes the font 
+        size to 40 pixels using the text align and font size properties
+      -->
+
+      <p style="font-size: 24px">
+        this page shows the effects of adding inline CSS to HTML tags.
+      </p>
+
+      <p>does this paragraph have the same styling as my other paragragh?</p>
+      <!--
+        this sets the font size to be 24 pixels using the font-size property of CSS.
+      -->
+    </main>
+  </body>
+</html>

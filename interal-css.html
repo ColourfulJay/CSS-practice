@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internal CSS</title>
+    <!-- this demonstraties how to create an internal style sheet using the style tag.-->
+    <style>
+      /* 
+        this styles the body of the webpage to have a background of #f5f5ff,
+        which is white with a hint of blue, using the background-colour CSS propert and
+        a font colour of midnightblue uing the colour CSS property
+      */
+      body {
+        background-color: #fbfbfe;
+        color: midnightblue;
+      }
+
+      /*
+        this styles all h1 tags to be ceneter aligned and have a font size of 40px.
+      */
+      h1 {
+        font-size: 40px;
+        text-align: center;
+      }
+
+      /*
+        this styles all p tags to be ceneter aligned and have a font size of 24px.
+      */
+      p {
+        font-size: 24px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--
+      nav>ul>li*2>a
+    -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Inline CSS</a></li>
+        <li><a href="interal-css.html">Internal CSS</a></li>
+        <li><a href="external-css.html">External CSS</a></li>
+        <li>
+          <a href="playing-with-external.html">Playing with External CSS</a>
+        </li>
+        <li><a href="clases-and-ids.html">Classes and Ids</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h1>Internal CSS</h1>
+
+      <p>this page shows the effects of adding Internal CSS to HTML tags.</p>
+
+      <p>does this paragraph have the same styling as my other paragragh?</p>
+    </main>
+  </body>
+</html>

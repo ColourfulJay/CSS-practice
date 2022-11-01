@@ -1,0 +1,58 @@
+/* 
+  this styles the body of the webpage to have a background of #f5f5ff,
+  which is white with a hint of blue, using the background-colour CSS propert and
+  a font colour of midnightblue uing the colour CSS property
+*/
+body {
+  background-color: #fbfbfe;
+  color: midnightblue;
+}
+
+/*
+  this styles all h1 tags to be ceneter aligned and have a font size of 40px.
+*/
+h1 {
+  font-size: 40px;
+  text-align: center;
+}
+
+/*
+ this styles all p tags to be ceneter aligned and have a font size of 24px.
+*/
+p {
+  font-size: 24px;
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  outline: auto;
+  color: #010030;
+}
+
+ul {
+  background-color: rgb(202, 202, 202);
+  border-radius: 32px;
+}
+
+div {
+  width: 1561px;
+  height: 50px;
+  background-color: rgb(177, 177, 177);
+  position: relative;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes example {
+  from {
+    left: -2000px;
+  }
+  to {
+    left: 10px;
+  }
+}
