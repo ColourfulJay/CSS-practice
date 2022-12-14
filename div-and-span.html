@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Classes and Ids CSS</title>
+    <title>Divs and Spans</title>
     <!-- this demonstraties how to create an internal style sheet using the style tag.-->
     <style>
       /* 
@@ -56,7 +56,20 @@
         font-size: 40px;
         text-align: center;
       }
-
+      /*
+        this styles all divs on the webpage to have a background color of the cornflower blue, sets the div
+        to use the automatic width of the div, and sets the hieght to 200px. This also styles the border to
+        have a width of 4px with a solid black line, rounds the corners of the div to have a radius of 5px,
+        and adds 10px of padding to the top and bottom of the div, as well as 20px of the padding on the left and right
+      */
+      div {
+        background-color: #d4ebf2;
+        width: auto;
+        height: 200px;
+        padding: 20px;
+        border: 2px solid #191970;
+        border-radius: 5px;
+      }
       /*
         this styles all p tags to be ceneter aligned and have a font size of 24px.
       */
@@ -74,6 +87,14 @@
         font-family: Georgia, "Times New Roman", Cambria, Serif;
 
         font-weight: bold;
+      }
+      /* 
+        this styles all spans on the web page to underline the 
+        text inside the span and change the text to be italicized
+      */
+      span {
+        text-decoration: underline;
+        font-style: italic;
       }
     </style>
   </head>
@@ -100,19 +121,32 @@
     </nav>
 
     <main>
-      <h1>Classes and Ids CSS</h1>
+      <h1>Divs and Spans</h1>
 
-      <p>
-        this paragraph will show the effect of giving an element an ID and
-        styling that ID"
-      </p>
+      <!-- 
+          NOTE: This is NOT the proper way to use a div because i have not used all 
+          the proper semantic tags yet
 
-      <p>does this paragraph have the same styling as my other paragragh?</p>
+          This is a div, which is short for division. It is a block element that acts
+          like a container for multiple block elements.
+      -->
+      <div>
+        <p>
+          this paragraph will show the effect of giving an element an ID and
+          styling that ID"
+        </p>
 
-      <p id="styled-by-id">
-        This paragraph will show the effect of giving an element an ID and
-        styling that ID
-      </p>
+        <p>does this paragraph have the same styling as my other paragragh?</p>
+
+        <!--
+          this demonstrates the use of a span which is an inline element used to group multiple inline elements. it can also be 
+          used to style spefic words or sets of words inside other html elements which is how it is being used in this context
+        -->
+        <p id="styled-by-id">
+          This paragraph will show the effect of giving an element an ID and
+          <span>styling</span> that ID
+        </p>
+      </div>
     </main>
   </body>
 </html>
