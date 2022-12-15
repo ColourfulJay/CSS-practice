@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gradients</title>
+    <!-- this demonstraties how to create an internal style sheet using the style tag.-->
+    <style>
+      /* 
+        this styles the contect so that when we scroll so on the wbesite
+        it is a smoother movement.
+      */
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        color: midnightblue;
+      }
+
+      /*
+        this styles every ul in the nav (due to decendent selectors)
+        to have no bullet points beside each list item in the ul.
+      */
+      /* this is how we apply linear gradients to a polygonal area.
+      
+      The first parameter is the direction of the linear gradient (can be 
+      to top, to bottom, to left, to right to top left, to bottom right, etc.
+      or can be specific degrree amount, example: 60deg).
+      
+      The next X parameters are the colours to show in the gradient. 
+      (you can add mutiple(more than 3) colours, but it is not best practice)*/
+      nav {
+        padding: 10px 0;
+
+        background: linear-gradient(60deg, #7f7fd5, #86a8e7, #91eae4);
+        background: -o-linear-gradient(60deg, #7f7fd5, #86a8e7, #91eae4);
+        background: -moz-linear-gradient(60deg, #7f7fd5, #86a8e7, #91eae4);
+        background: -webkit-linear-gradient(60deg, #7f7fd5, #86a8e7, #91eae4);
+      }
+
+      nav ul {
+        list-style: none;
+      }
+      /*
+      this styles every list item in the ul that is in the nav
+      to have 10 pixels of margin, and a font size of 20 px
+      */
+
+      nav ul li {
+        margin: 10px;
+        font-size: 19px;
+        display: inline-block;
+      }
+      /*
+        this styles all h1 tags to be ceneter aligned and have a font size of 40px.
+      */
+
+      /*
+        this sty;es the mutiple elemts with a class of nav-link to have
+        4px of margin, a 2px border that is a solid black line, padding of 5px,
+        a background colour of #191970, and a font colour of #f5f5ff.
+      */
+      .nav-link {
+        border: 2px solid rgb(0, 0, 0);
+        padding: 5px;
+        background-color: #191970;
+        color: #f5f5ff;
+      }
+
+      h1 {
+        font-size: 40px;
+        text-align: center;
+      }
+      /*
+        this styles all divs on the webpage to have a background color of the cornflower blue, sets the div
+        to use the automatic width of the div, and sets the hieght to 200px. This also styles the border to
+        have a width of 4px with a solid black line, rounds the corners of the div to have a radius of 5px,
+        and adds 10px of padding to the top and bottom of the div, as well as 20px of the padding on the left and right
+      */
+      div {
+        background-color: #d4ebf2;
+        width: auto;
+        height: 200px;
+        padding: 20px;
+        border: 2px solid #191970;
+        border-radius: 5px;
+      }
+      /*
+        this styles all p tags to be ceneter aligned and have a font size of 24px.
+      */
+      p {
+        font-size: 24px;
+      }
+      /*
+        this styles the one element with the id of stlyed-by-id to use to
+        use the gerogia font. if the georgia font cannot be used it uses times new roman.
+        if times ner roman cannot be used, cambria is used. if cambria cannot be used, the default serif font
+        built into the brower is used.
+        it also styles the text to be bolded
+      */
+      #styled-by-id {
+        font-family: Georgia, "Times New Roman", Cambria, Serif;
+
+        font-weight: bold;
+      }
+      /*
+        this styles all spans on the web page to underline the
+        text inside the span and change the text to be italicized
+      */
+      span {
+        text-decoration: underline;
+        font-style: italic;
+      }
+
+      #back-to-top {
+        display: -ms-flexbox;
+        display: -moz-box;
+        display: -webkit-box;
+        display: -webkit-flex;
+
+        /*  
+          This allows us to fix the position of the Back to Top button
+          to the bottom right corner of the web page and maakes it follow
+          the user as they scroll.
+        */
+
+        position: fixed;
+        bottom: 20px;
+        right: 10px;
+
+        width: 80px;
+        height: 80px;
+
+        /* 
+          This allows us to center our content horizontally is the
+          Back to Top anchor.
+        */
+        -ms-flex-pack: center;
+        -moz-box-align: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+
+        border: #121212 solid 2px;
+
+        -moz-border-radius: 40px;
+        -webkit-border-radius: 40px;
+        border-radius: 40px;
+        /* 
+          This allows us to style the background of the Back to Top 
+          button to be a radial gradient because it is a round button.
+          The first colour is at the center of the gradient and the second
+          colour is at the edge of the round area.
+        */
+        background: -moz-radial-gradient(#91eae4, #86a8e7);
+        background: -moz-radial-gradient(#91eae4, #86a8e7);
+        background: -webkit-radial-gradient(#91eae4, #86a8e7);
+        background: radial-gradient(#91eae4, #86a8e7);
+
+        color: #313131;
+
+        text-align: center;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+
+  <body id="top">
+    <!--
+      nav>ul>li*2>a
+    -->
+    <nav>
+      <ul>
+        <li><a href="index.html" class="nav-link">Inline CSS</a></li>
+        <li><a href="interal-css.html" class="nav-link">Internal CSS</a></li>
+        <li><a href="external-css.html" class="nav-link">External CSS</a></li>
+        <li>
+          <a href="playing-with-external.html" class="nav-link">
+            Playing with External CSS
+          </a>
+        </li>
+        <li>
+          <a href="classes-and-ids.html" class="nav-link">Classes and Ids</a>
+        </li>
+        <li><a href="div-and-span.html" class="nav-link">Divs and Spans</a></li>
+        <li>
+          <a href="typography.html" class="nav-link">Typography Principles</a>
+        </li>
+        <li>
+          <a href="backgrounds-and-texts.html" class="nav-link">
+            Background and texts
+          </a>
+        </li>
+        <li><a href="gradients.html" class="nav-link">Gradients</a></li>
+        <li><a href="transforms.html" class="nav-link">Transforms</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h1>Gradients</h1>
+
+      <!-- 
+          NOTE: This is NOT the proper way to use a div because i have not used all 
+          the proper semantic tags yet
+
+          This is a div, which is short for division. It is a block element that acts
+          like a container for multiple block elements.
+      -->
+      <div>
+        <p>this paragraph will show the effect of Gradients</p>
+
+        <p>does this paragraph have the same styling as my other paragragh?</p>
+
+        <!--
+          this demonstrates the use of a span which is an inline element used to group multiple inline elements. it can also be 
+          used to style spefic words or sets of words inside other html elements which is how it is being used in this context
+        -->
+        <p id="styled-by-id">
+          This paragraph will show the effect of giving an element an ID and
+          <span>styling</span> that ID
+        </p>
+      </div>
+
+      <a href="#top" id="back-to-top">
+        Back <br />
+        to Top
+      </a>
+    </main>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  </body>
+</html>

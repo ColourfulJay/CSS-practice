@@ -4,57 +4,81 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Divs and Spans</title>
+    <title>Transforms</title>
     <!-- this demonstraties how to create an internal style sheet using the style tag.-->
     <style>
       /* 
-        this styles the body of the webpage to have a background of #f5f5ff,
-        which is white with a hint of blue, using the background-colour CSS propert and
-        a font colour of midnightblue uing the colour CSS property
+        this styles the contect so that when we scroll so on the wbesite
+        it is a smoother movement.
       */
+
+    /*
+        this rotates the element with the ID of first-div by 30 degrees, making it go to the bottom right 
+    */
+
       body {
-        background-color: #fbfbfe;
         color: midnightblue;
       }
 
-      /* 
-        this styles every ul in the nav (due to decendent selectors) 
-        to have no bullet points beside each list item in the ul.   
+      /*
+        this styles every ul in the nav (due to decendent selectors)
+        to have no bullet points beside each list item in the ul.
       */
+      /* this is how we apply linear gradients to a polygonal area.
+      
+      The first parameter is the direction of the linear gradient (can be 
+      to top, to bottom, to left, to right to top left, to bottom right, etc.
+      or can be specific degrree amount, example: 60deg).
+      
+      The next X parameters are the colours to show in the gradient. 
+      (you can add mutiple(more than 3) colours, but it is not best practice)*/
+      nav {
+        padding: 10px 0;
+
+        background: linear-gradient(60deg, #7f7fd5, #86a8e7, #91eae4);
+        background: -o-linear-gradient(60deg, #7f7fd5, #86a8e7, #91eae4);
+        background: -moz-linear-gradient(60deg, #7f7fd5, #86a8e7, #91eae4);
+        background: -webkit-linear-gradient(60deg, #7f7fd5, #86a8e7, #91eae4);
+
+        transform: skew(26deg);
+      }
+
       nav ul {
         list-style: none;
       }
       /*
       this styles every list item in the ul that is in the nav
-      to have 10 pixels of margin, and a font size of 20 px 
+      to have 10 pixels of margin, and a font size of 20 px
       */
 
       nav ul li {
         margin: 10px;
-        font-size: 20px;
+        font-size: 19px;
         display: inline-block;
+        transform:rotate(84deg);
       }
       /*
         this styles all h1 tags to be ceneter aligned and have a font size of 40px.
       */
 
-      /* 
+      /*
         this sty;es the mutiple elemts with a class of nav-link to have
-        4px of margin, a 2px border that is a solid black line, padding of 5px, 
+        4px of margin, a 2px border that is a solid black line, padding of 5px,
         a background colour of #191970, and a font colour of #f5f5ff.
       */
       .nav-link {
-        margin: 4px;
-        border: 2px solid black;
+        border: 2px solid rgb(0, 0, 0);
         padding: 5px;
-
         background-color: #191970;
         color: #f5f5ff;
+        
       }
 
       h1 {
         font-size: 40px;
         text-align: center;
+        animation: roll 3s infinite;
+        transform: scale(300%);
       }
       /*
         this styles all divs on the webpage to have a background color of the cornflower blue, sets the div
@@ -69,17 +93,30 @@
         padding: 20px;
         border: 2px solid #191970;
         border-radius: 5px;
+
+        transform: skew(26deg);
+        
       }
+
+      @keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
       /*
         this styles all p tags to be ceneter aligned and have a font size of 24px.
       */
       p {
         font-size: 24px;
+        transform:skew(300deg);
       }
-      /* 
+      /*
         this styles the one element with the id of stlyed-by-id to use to
         use the gerogia font. if the georgia font cannot be used it uses times new roman.
-        if times ner roman cannot be used, cambria is used. if cambria cannot be used, the default serif font 
+        if times ner roman cannot be used, cambria is used. if cambria cannot be used, the default serif font
         built into the brower is used.
         it also styles the text to be bolded
       */
@@ -87,11 +124,12 @@
         font-family: Georgia, "Times New Roman", Cambria, Serif;
 
         font-weight: bold;
+        
+        
+        transform:rotate(34deg);
+       
       }
-      /* 
-        this styles all spans on the web page to underline the 
-        text inside the span and change the text to be italicized
-      */
+      
       span {
         text-decoration: underline;
         font-style: italic;
@@ -99,19 +137,17 @@
     </style>
   </head>
 
-  <body>
-    <!--
-      nav>ul>li*2>a
-    -->
+  <body >
+    
     <nav>
       <ul>
         <li><a href="index.html" class="nav-link">Inline CSS</a></li>
         <li><a href="interal-css.html" class="nav-link">Internal CSS</a></li>
         <li><a href="external-css.html" class="nav-link">External CSS</a></li>
         <li>
-          <a href="playing-with-external.html" class="nav-link"
-            >Playing with External CSS</a
-          >
+          <a href="playing-with-external.html" class="nav-link">
+            Playing with External CSS
+          </a>
         </li>
         <li>
           <a href="classes-and-ids.html" class="nav-link">Classes and Ids</a>
@@ -121,9 +157,9 @@
           <a href="typography.html" class="nav-link">Typography Principles</a>
         </li>
         <li>
-          <a href="backgrounds-and-texts.html" class="nav-link"
-            >Background and texts</a
-          >
+          <a href="backgrounds-and-texts.html" class="nav-link">
+            Background and texts
+          </a>
         </li>
         <li><a href="gradients.html" class="nav-link">Gradients</a></li>
         <li><a href="transforms.html" class="nav-link">Transforms</a></li>
@@ -131,7 +167,7 @@
     </nav>
 
     <main>
-      <h1>Divs and Spans</h1>
+      <h1>transforms</h1>
 
       <!-- 
           NOTE: This is NOT the proper way to use a div because i have not used all 
@@ -141,10 +177,7 @@
           like a container for multiple block elements.
       -->
       <div>
-        <p>
-          this paragraph will show the effect of giving an element an ID and
-          styling that ID"
-        </p>
+        <p>this paragraph will show the effect of Gradients</p>
 
         <p>does this paragraph have the same styling as my other paragragh?</p>
 
@@ -157,6 +190,9 @@
           <span>styling</span> that ID
         </p>
       </div>
+
+      
+      </a>
     </main>
   </body>
 </html>
