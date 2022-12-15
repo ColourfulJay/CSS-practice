@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Transforms</title>
+    <title>Transitions-and-Animations</title>
     <!-- this demonstraties how to create an internal style sheet using the style tag.-->
     <style>
       /* 
@@ -12,14 +12,62 @@
         it is a smoother movement.
       */
 
-    /*
-        this rotates the element with the ID of first-div by 30 degrees, making it go to the bottom right 
-    */
-
-      body {
-        color: midnightblue;
+      html {
+        scroll-behavior: smooth;
       }
+      /* 
+        this styling is used to create the state before the animation occurs. 
+        We want our body to be completey transparent and be shifted up 100px 
+        so that when the transistion occurs the body can fade in and drop down
+        into place.
+      */
+      body {
+        background-color: #f5f5ff;
+        color: midnightblue;
 
+        opacity: 0;
+        transform: translateY(-100px);
+        /* 
+            This defines our animaton.
+
+            We define the animation-name as Fade-in.
+            We define the animation-duration (how long the animation lasts) as 1 second.
+            We define the animation-timing-function (how the styling changes as it moves through the 
+            animation) as ease-in which means it will slowly start the animation and speed up to the end.
+            We define the animation-delay as 2 seconds.
+            We define the animation-fill-mode (whether the styling is kept at the end of the animation
+            for not) to forwards, which means to keep the styling that is at the end of the animation.
+
+            Other animation properties that we do not define are:
+            animation-iteration-count - how many times you want your animation to run
+            animation-direction - do you want your animation to go forward(nortmal)? Backward(reverse)? 
+            Forward and then backward (alternate)? Backward then forward (alternate-reverse)
+        */
+        -o-animation: fade-in 1s ease-in 2s forward;
+        -moz-animation: fade-in 1s ease-in 2s forward;
+        -webkit-animation: fade-in 1s ease-in 2s forward;
+        animation: fade-in 1s ease-in 2s forward;
+      }
+      /* 
+        This defines the aniaion itself. We use #keyframes to show that we are creating an 
+        animation and then we use the same tname that we defined in the animation property *i,e,m fade-in).
+
+        Then, we define the startung point of the animation (from) and the styling at the start point. 
+
+        finally, we define the ending point of the animation (to) and the styling at the end ending point.
+
+        NOTE: You can also define %s of where different styling occurs (i.e., 0%, 33%, 66%, 100%).
+      */
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(-100px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
       /*
         this styles every ul in the nav (due to decendent selectors)
         to have no bullet points beside each list item in the ul.
@@ -39,8 +87,6 @@
         background: -o-linear-gradient(60deg, #7f7fd5, #86a8e7, #91eae4);
         background: -moz-linear-gradient(60deg, #7f7fd5, #86a8e7, #91eae4);
         background: -webkit-linear-gradient(60deg, #7f7fd5, #86a8e7, #91eae4);
-
-        /* transform: skew(26deg); */
       }
 
       nav ul {
@@ -55,30 +101,54 @@
         margin: 10px;
         font-size: 19px;
         display: inline-block;
-        /* transform:rotate(84deg); */
       }
       /*
         this styles all h1 tags to be ceneter aligned and have a font size of 40px.
       */
+      nav li {
+        display: inline;
 
+        font-size: 20px;
+      }
       /*
         this sty;es the mutiple elemts with a class of nav-link to have
         4px of margin, a 2px border that is a solid black line, padding of 5px,
         a background colour of #191970, and a font colour of #f5f5ff.
       */
       .nav-link {
+        margin: 4px;
         border: 2px solid rgb(0, 0, 0);
         padding: 5px;
+
         background-color: #191970;
         color: #f5f5ff;
-        
+
+        -o-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+
+        -moz-transition: background-color 0.1s ease-in-out,
+          color 0.1s ease-in-out;
+
+        -webkit-transition: background-color 0.1s ease-in-out,
+          color 0.1s ease-in-out;
+
+        transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+      }
+
+      /* 
+        These are the user actions that will start the transition.
+        The transition will change the background color and font color
+        smoothly because we change the backgrond colour and font color
+        inside this styling block.
+      */
+      nav a:hover,
+      nav a:focus {
+        background-color: #f5f5ff;
+        color: #191970;
       }
 
       h1 {
         font-size: 40px;
         text-align: center;
-        /* animation: roll 3s infinite;
-        transform: scale(300%); */
       }
       /*
         this styles all divs on the webpage to have a background color of the cornflower blue, sets the div
@@ -93,25 +163,12 @@
         padding: 20px;
         border: 2px solid #191970;
         border-radius: 5px;
-
-        /* transform: skew(26deg); */
-        
       }
-
-      /* @keyframes roll {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-} */
       /*
         this styles all p tags to be ceneter aligned and have a font size of 24px.
       */
       p {
         font-size: 24px;
-        /* transform:skew(300deg); */
       }
       /*
         this styles the one element with the id of stlyed-by-id to use to
@@ -124,62 +181,74 @@
         font-family: Georgia, "Times New Roman", Cambria, Serif;
 
         font-weight: bold;
-        
-        
-        /* transform:rotate(34deg); */
-       
       }
-      
+      /*
+        this styles all spans on the web page to underline the
+        text inside the span and change the text to be italicized
+      */
       span {
         text-decoration: underline;
         font-style: italic;
       }
 
-      .spinner {
-  margin: 10px;
-  animation: rotate 2s linear infinite;
-  width: 180px;
-  height: 180px;
-}
+      #back-to-top {
+        display: -ms-flexbox;
+        display: -moz-box;
+        display: -webkit-box;
+        display: -webkit-flex;
 
-.spinner-dot {
-  stroke: #000;
-  stroke-width: 1;
-  fill: #000;
-  animation: skew 2s linear infinite alternate;
-}
+        /*  
+          This allows us to fix the position of the Back to Top button
+          to the bottom right corner of the web page and maakes it follow
+          the user as they scroll.
+        */
 
-.spinner-border {
-  fill: transparent;
-  stroke-width: 2;
-  width: 100%;
-  height: 100%;
-}
+        position: fixed;
+        bottom: 20px;
+        right: 10px;
 
-.path {
-  stroke-dasharray: 170;
-  stroke-dashoffset: 20;
-}
+        width: 80px;
+        height: 80px;
 
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
-  }
-}
+        /* 
+          This allows us to center our content horizontally is the
+          Back to Top anchor.
+        */
+        -ms-flex-pack: center;
+        -moz-box-align: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
 
-@keyframes skew {
-  from {
-    transform: skewX(10deg)
-  }
-  to {
-    transform: skewX(40deg)
-  }
-}
+        border: #121212 solid 2px;
+
+        -moz-border-radius: 40px;
+        -webkit-border-radius: 40px;
+        border-radius: 40px;
+        /* 
+          This allows us to style the background of the Back to Top 
+          button to be a radial gradient because it is a round button.
+          The first colour is at the center of the gradient and the second
+          colour is at the edge of the round area.
+        */
+        background: -moz-radial-gradient(#91eae4, #86a8e7);
+        background: -moz-radial-gradient(#91eae4, #86a8e7);
+        background: -webkit-radial-gradient(#91eae4, #86a8e7);
+        background: radial-gradient(#91eae4, #86a8e7);
+
+        color: #313131;
+
+        text-align: center;
+        font-weight: bold;
+        text-decoration: none;
+      }
     </style>
   </head>
 
-  <body >
-    
+  <body id="top">
+    <!--
+      nav>ul>li*2>a
+    -->
     <nav>
       <ul>
         <li><a href="index.html" class="nav-link">Inline CSS</a></li>
@@ -213,7 +282,7 @@
     </nav>
 
     <main>
-      <h1>transforms</h1>
+      <h1>Transitions and Animations</h1>
 
       <!-- 
           NOTE: This is NOT the proper way to use a div because i have not used all 
@@ -237,7 +306,9 @@
         </p>
       </div>
 
-      
+      <a href="#top" id="back-to-top">
+        Back <br />
+        to Top
       </a>
     </main>
   </body>
