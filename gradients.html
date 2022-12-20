@@ -7,7 +7,7 @@
     <title>Gradients</title>
     <!-- this demonstraties how to create an internal style sheet using the style tag.-->
     <style>
-      /* 
+      /*
         this styles the contect so that when we scroll so on the wbesite
         it is a smoother movement.
       */
@@ -25,12 +25,12 @@
         to have no bullet points beside each list item in the ul.
       */
       /* this is how we apply linear gradients to a polygonal area.
-      
-      The first parameter is the direction of the linear gradient (can be 
+
+      The first parameter is the direction of the linear gradient (can be
       to top, to bottom, to left, to right to top left, to bottom right, etc.
       or can be specific degrree amount, example: 60deg).
-      
-      The next X parameters are the colours to show in the gradient. 
+
+      The next X parameters are the colours to show in the gradient.
       (you can add mutiple(more than 3) colours, but it is not best practice)*/
       nav {
         padding: 10px 0;
@@ -45,8 +45,7 @@
         list-style: none;
       }
       /*
-      this styles every list item in the ul that is in the nav
-      to have 10 pixels of margin, and a font size of 20 px
+      bottom puts it to the bottom of your viewpoint
       */
 
       nav ul li {
@@ -59,7 +58,7 @@
       */
 
       /*
-        this sty;es the mutiple elemts with a class of nav-link to have
+        this styles the mutiple elemts with a class of nav-link to have
         4px of margin, a 2px border that is a solid black line, padding of 5px,
         a background colour of #191970, and a font colour of #f5f5ff.
       */
@@ -73,14 +72,66 @@
       h1 {
         font-size: 40px;
         text-align: center;
+
+        color: darkorchid;
+        /* 
+          This styles the h1 to have sicky positioning.
+          Sticky positioning works like relative positioning (where an element 
+          will be placed in the normal flow of the website) untill the user
+          reaches the scroll postioning defined by the top, left, bottom, or right
+          CSS properties
+
+          In this case, the heading will be in the normal flow of the website untill
+          the user scrolls to the point where the heading raches the top of the wndow. 
+          At that point, the heading sticks to the top of the window.
+        */
+        position: sticky;
+
+        /* 
+          This z-index property makes it so that the heading shows up on top of
+          every other element that has a lower z-index value than 2.
+
+          NOTE: The z-index property ONLY works on POSITIONED elements (i.e, not static)
+        */
+        z-index: 2;
       }
-      /*
-        this styles all divs on the webpage to have a background color of the cornflower blue, sets the div
-        to use the automatic width of the div, and sets the hieght to 200px. This also styles the border to
-        have a width of 4px with a solid black line, rounds the corners of the div to have a radius of 5px,
-        and adds 10px of padding to the top and bottom of the div, as well as 20px of the padding on the left and right
-      */
+      section {
+        /* 
+          This styles the section to appear like it is in the normal flow of the website.
+          However, if we choose, we can shift from its normal positioning the element 
+          using the top, left, bottom, and right properties because it uses relative 
+          positioning.
+        */
+        position: relative;
+
+        margin: 20px;
+
+        background-color: #191970;
+        height: 50vh;
+      }
+
+      section:first-of-type {
+        /* 
+          This styles the first section element to be shifted from its normal postion 
+          by 100px form the top of its normal position and 150px from the left of its normal 
+          positioning.
+        */
+        top: 100px;
+        left: 150px;
+
+        border: 10px black solid;
+      }
       div {
+        /* 
+          This styles the element to be positioned related to its nearest 
+          positioned ancestor. Since the section elements are all positioned
+          relative, these divs are positioned in relation to the section they 
+          are children of (i.e., inside of).
+
+          NOTE: If the section tag was not positioned (i.e., had static positioning),
+                these divs would be positioned related to the body itself.
+        */
+        position: absolute;
         background-color: #d4ebf2;
         width: auto;
         height: 200px;
@@ -121,7 +172,7 @@
         display: -webkit-box;
         display: -webkit-flex;
 
-        /*  
+        /*
           This allows us to fix the position of the Back to Top button
           to the bottom right corner of the web page and maakes it follow
           the user as they scroll.
@@ -134,7 +185,7 @@
         width: 80px;
         height: 80px;
 
-        /* 
+        /*
           This allows us to center our content horizontally is the
           Back to Top anchor.
         */
@@ -149,8 +200,8 @@
         -moz-border-radius: 40px;
         -webkit-border-radius: 40px;
         border-radius: 40px;
-        /* 
-          This allows us to style the background of the Back to Top 
+        /*
+          This allows us to style the background of the Back to Top
           button to be a radial gradient because it is a round button.
           The first colour is at the center of the gradient and the second
           colour is at the edge of the round area.
@@ -230,64 +281,52 @@
         </p>
       </div>
 
-      <a href="#top" id="back-to-top">
-        Back <br />
-        to Top
-      </a>
+      <div>
+        <p>this paragraph will show the effect of Gradients</p>
+
+        <p>does this paragraph have the same styling as my other paragragh?</p>
+
+        <!--
+          this demonstrates the use of a span which is an inline element used to group multiple inline elements. it can also be 
+          used to style spefic words or sets of words inside other html elements which is how it is being used in this context
+        -->
+        <p id="styled-by-id">
+          This paragraph will show the effect of giving an element an ID and
+          <span>styling</span> that ID
+        </p>
+      </div>
+
+      <div>
+        <p>this paragraph will show the effect of Gradients</p>
+
+        <p>does this paragraph have the same styling as my other paragragh?</p>
+
+        <!--
+          this demonstrates the use of a span which is an inline element used to group multiple inline elements. it can also be 
+          used to style spefic words or sets of words inside other html elements which is how it is being used in this context
+        -->
+        <p id="styled-by-id">
+          This paragraph will show the effect of giving an element an ID and
+          <span>styling</span> that ID
+        </p>
+      </div>
+
+      <div>
+        <p>this paragraph will show the effect of Gradients</p>
+
+        <p>does this paragraph have the same styling as my other paragragh?</p>
+
+        <!--
+          this demonstrates the use of a span which is an inline element used to group multiple inline elements. it can also be 
+          used to style spefic words or sets of words inside other html elements which is how it is being used in this context
+        -->
+        <p id="styled-by-id">
+          This paragraph will show the effect of giving an element an ID and
+          <span>styling</span> that ID
+        </p>
+      </div>
+
+      <a href="#top" id="back-to-top"> Back to Top </a>
     </main>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
   </body>
 </html>
