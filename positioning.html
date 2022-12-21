@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gradients</title>
+    <title>Positioning</title>
     <!-- this demonstraties how to create an internal style sheet using the style tag.-->
     <style>
       /* 
@@ -33,6 +33,22 @@
       The next X parameters are the colours to show in the gradient. 
       (you can add mutiple(more than 3) colours, but it is not best practice)*/
       nav {
+        /* 
+          The visibility property allows you to change weather an element 
+          is shown (visible) or not shown (hidden). This proptery will still
+          save the space that is taken up by this element on the page
+        */
+        /* visibility: hidden; */
+
+        /* 
+          The display proptery allows you to change whether an element is
+          a block element, inline element, inline-block element, and more.
+          The value of none will make it so that the element does not display
+          on the webpage and it does not save the space that would be used by
+          the element. 
+        */
+        /* display: none;  */
+
         padding: 10px 0;
 
         background: linear-gradient(60deg, #7f7fd5, #86a8e7, #91eae4);
@@ -49,8 +65,9 @@
       to have 10 pixels of margin, and a font size of 20 px
       */
 
-      nav ul li {
+      nav li {
         margin: 10px;
+        width: 40%;
         font-size: 19px;
         display: inline-block;
       }
@@ -64,6 +81,18 @@
         a background colour of #191970, and a font colour of #f5f5ff.
       */
       .nav-link {
+        display: inline-block;
+        width: 100%;
+        /* 
+          In this example, we had to change the anchors inside
+          our list items to be inline-block elements because, by
+          default they are inline elements, and inline elements
+          do not allow you to change the width and height of those
+          elements (i.e., width 100%)
+
+          NOTE: This will be very important when we talk about flex
+                and grid later on. lookk it taps when i type i lobe this bongo cat
+        */
         border: 2px solid rgb(0, 0, 0);
         padding: 5px;
         background-color: #191970;
@@ -202,11 +231,12 @@
             Transitions and Animations
           </a>
         </li>
+        <li><a href="positioning.html" class="nav-link">Positioning</a></li>
       </ul>
     </nav>
 
     <main>
-      <h1>Gradients</h1>
+      <h1>Positioning</h1>
 
       <!-- 
           NOTE: This is NOT the proper way to use a div because i have not used all 
